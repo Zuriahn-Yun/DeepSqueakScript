@@ -33,7 +33,7 @@ nfft     = round(nfft     * fs);
 [~, fr, ti, p] = spectrogram(audio, wind, noverlap, nfft, fs, 'yaxis');
 
 % Frequency limits
-HighCutoff = fr/2000; % kHz
+HighCutoff = 100; % kHz
 LowCutoff  = 0;   % kHz
 upper_freq = find(fr <= HighCutoff*1000, 1, 'last');
 lower_freq = find(fr >= LowCutoff*1000,  1, 'first');
